@@ -8,6 +8,6 @@ use Rack::MethodOverride
 
 use SessionsController
 use DonorsController
-# use OrganizationsController
-# use ItemsController
+use DonationsController
+
 run ApplicationController

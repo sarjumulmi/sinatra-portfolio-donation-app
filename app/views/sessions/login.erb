@@ -1,8 +1,13 @@
 <h3>Please Log In Below</h3>
-<form action="/donors" method="post">
+
+<form action="/sessions" method="post">
   <label for="email">Email: </label>
   <input type="email" name="email" value=""><br><br>
   <label for="passord">Password: </label>
   <input type="password" name="password" value=""><br><br>
   <input type="submit" name="" value="Submit">
 </form>
+
+<% if flash[:message] %>
+  <p><%= flash[:message] %></p>
+<% end %>
