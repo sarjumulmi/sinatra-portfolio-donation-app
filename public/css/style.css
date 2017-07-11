@@ -1,0 +1,17 @@
+body {
+  font-family: sans-serif;
+  margin: 10px;
+  padding : 10px;
+  background-color: #F1F2F3;
+}
+
+h1 {
+  background-color: #CAD3DD;
+  border-bottom: 2px solid #3A3D3F;
+  padding-bottom: 20px
+  padding-top: 15px
+}
+a {
+  margin: auto;
+  padding-top: 15px;
+}
