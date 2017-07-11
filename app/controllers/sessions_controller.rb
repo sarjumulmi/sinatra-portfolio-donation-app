@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     donor = Donor.find_by(:email=>params[:email])
     if donor && donor.authenticate(params[:password])
       session[:user_id] = donor.id
-        binding.pry
+        # binding.pry
       redirect '/donations'
     else
       flash[:message] = 'Invalid Credentials.'
