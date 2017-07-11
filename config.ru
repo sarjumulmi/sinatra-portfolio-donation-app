@@ -6,6 +6,7 @@ end
 
 use Rack::MethodOverride
 
+use SessionsController
 use DonorsController
 # use OrganizationsController
 # use ItemsController
