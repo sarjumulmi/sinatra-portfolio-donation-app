@@ -1,4 +1,7 @@
 <h2>Please sign up for a donor account below:</h2>
+<% if flash[:message] %>
+  <p class="warning"><%= flash[:message] %></p>
+<% end %>
 <form action="/donors" method="post">
   <label for="name">Donor Name: </label>
   <input type="text" name="name" value="" placeholder="Name"><br><br>
