@@ -29,5 +29,8 @@ class DonorsController < ApplicationController
     end
   end
 
+  get '/donors/:id' do
+    
+  end
 
 end
