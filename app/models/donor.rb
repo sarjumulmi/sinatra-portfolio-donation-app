@@ -8,4 +8,8 @@ class Donor < ActiveRecord::Base
   validates :name, presence: true
   validates :email, presence: true
 
+  def total_donation
+    self.donations.collect{|donation| donation.item_price}.reduce {|sum, price| sum + price}
+  end
+
 end

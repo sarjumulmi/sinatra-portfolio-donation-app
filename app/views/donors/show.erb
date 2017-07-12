@@ -1,0 +1,14 @@
+<h1>Profile Page for <%= @donor.name.capitalize %></h1>
+<form action="/donations/new" method="get">
+  <input type="submit" value="Donate">
+</form>
+<h3><%= @donor.name.capitalize %>'s Charitable Contribution:'</h3>
+<% @donor.donations.each do |donation| %>
+  <ul>
+    <li class="border">
+      <%= donation.item.capitalize %> donated to <%= donation.charity.name.capitalize %>
+      Amount: $<%= donation.item_price%>
+    </li>
+  </ul>
+  <p><b>Total amount donated: $<%= @donor.total_donation %></b></p>
+<% end %>

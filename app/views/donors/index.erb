@@ -6,10 +6,10 @@
   <% @donors.each do |donor| %>
 
     <li class="border">Donor Name:
-      <%= donor.name %><br>
+      <a href="/donors/<%= donor.id %>"><%= donor.name.capitalize %></a><br>
       <% donor.donations.each do |donation| %>
         <ul>Charity donated to:
-          <li><%= donation.charity.name %></li>
+          <li><%= donation.charity.name.capitalize %></li>
         </ul>
       <% end %>
     </li><br>
