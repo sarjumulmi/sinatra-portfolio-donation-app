@@ -11,7 +11,9 @@
       <% charity.donors.each do |donor| %>
 
         <ul>
-          <li><%= donor.name.capitalize %></li>
+          <li><%= donor.name.capitalize %>
+            Amount Donated: $<%= donor.donated_to_charity(charity) %>
+          </li>
         </ul>
       <% end %>
     </li><br>

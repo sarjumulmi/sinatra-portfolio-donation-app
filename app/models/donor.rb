@@ -12,4 +12,8 @@ class Donor < ActiveRecord::Base
     self.donations.collect{|donation| donation.item_price}.reduce {|sum, price| sum + price}
   end
 
+  def donated_to_charity(charity)
+    self.donations.select{|donation| donation.charity == charity}.collect{|donation| donation.item_price}.reduce {|sum, donation| sum + donation.item_price}
+  end
+
 end
