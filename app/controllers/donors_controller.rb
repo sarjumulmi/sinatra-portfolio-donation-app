@@ -47,4 +47,8 @@ class DonorsController < ApplicationController
     end
   end
 
+  patch '/donors/:id' do
+    binding.pry
+  end
+
 end
