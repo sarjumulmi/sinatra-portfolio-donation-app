@@ -4,7 +4,7 @@ class DonorsController < ApplicationController
     if !logged_in?
       erb :'/donors/signup'
     else
-      redirect '/donations'
+      redirect '/donors'
     end
   end
 

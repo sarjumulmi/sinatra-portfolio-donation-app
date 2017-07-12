@@ -14,7 +14,7 @@ describe "Sessions Controller" do
       fill_in('email', :with=>'a@b.com')
       fill_in('password', :with=>'test')
       click_button('Submit')
-      expect(page.current_path).to eq('/donations')
+      expect(page.current_path).to eq('/donors')
     end
 
     it 'does not let the user view login page if already loggen in' do
@@ -25,7 +25,7 @@ describe "Sessions Controller" do
       click_button('Submit')
       visit('/login')
       # need to setup session[user_id] manually???
-      expect(last_response.location).to include("/donations")
+      expect(last_response.location).to include("/donors")
     end
   end
 

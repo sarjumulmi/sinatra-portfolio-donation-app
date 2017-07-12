@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
     if !logged_in?
       erb :'/sessions/login'
     else
-      redirect :'/donations'
+      redirect :'/donors'
     end
   end
 
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     if donor && donor.authenticate(params[:password])
       session[:user_id] = donor.id
         # binding.pry
-      redirect '/donations'
+      redirect '/donors'
     else
       flash[:message] = 'Invalid Credentials.'
       redirect '/login'
