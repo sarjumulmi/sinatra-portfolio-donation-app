@@ -48,7 +48,9 @@ class DonorsController < ApplicationController
   end
 
   patch '/donors/:id' do
-    binding.pry
+    # binding.pry
+    current_user.update(:name=>params[:name])
+    redirect "/donors/#{current_user.id}"
   end
 
 end
