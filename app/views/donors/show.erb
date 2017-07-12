@@ -6,12 +6,12 @@
 <% @donor.donations.each do |donation| %>
   <ul>
     <li class="border">
-      <%= donation.item.capitalize %> donated to <%= donation.charity.name.capitalize %>
+      <%= donation.item.capitalize %> donated to <%= donation.charity.name.capitalize %>.<br>
       Amount: $<%= donation.item_price%>
     </li>
   </ul>
 <% end %>
-<p class="border-bottom"><b>Total amount donated: $<%= @donor.total_donation %></b></p>
+<p class="border-bottom"><b>Total Donation: $<%= @donor.total_donation %></b></p>
 <form action="/logout" method="get">
   <input type="submit" value="Logout">
 </form>
