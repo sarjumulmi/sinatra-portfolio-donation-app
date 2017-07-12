@@ -9,11 +9,11 @@ class Donor < ActiveRecord::Base
   validates :email, presence: true
 
   def total_donation
-    self.donations.collect{|donation| donation.item_price}.reduce {|sum, price| sum + price}
+    self.donations.sum(:item_price)
   end
 
   def donated_to_charity(charity)
-    self.donations.select{|donation| donation.charity == charity}.collect{|donation| donation.item_price}.reduce {|sum, donation| sum + donation.item_price}
+    self.donations.where(:charity_id=>charity.id).sum(:item_price)
   end
 
 end

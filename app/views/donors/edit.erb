@@ -1,11 +1,11 @@
 <h3><%= @donor.name.capitalize %>'s Profile Edit:</h3>
 <% if flash[:message] %>
-  <p><%= flash[:message] %></p>
+  <p class="warning"><%= flash[:message] %></p>
 <% end %>
 <form action="/donors/<%= @donor.id %>" method="post">
   <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="name">Donor Name:</label><br>
-  <input type="text" name="name" id="name" value="<%= @donor.name.capitalize %>"><br>
+  <input type="text" name="name" id="name" value="<%= @donor.name %>"><br>
   <p>Donor Email: <%= @donor.email %></p>
   <input type="submit" name="" value="submit">
 </form>

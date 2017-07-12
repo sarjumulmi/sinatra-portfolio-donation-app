@@ -49,8 +49,13 @@ class DonorsController < ApplicationController
 
   patch '/donors/:id' do
     # binding.pry
-    current_user.update(:name=>params[:name])
-    redirect "/donors/#{current_user.id}"
+    if !params[:name].empty?
+      current_user.update(:name=>params[:name])
+      redirect "/donors/#{current_user.id}"
+    else
+      flash[:message] = "Name cannot be blank."
+      redirect "/donors/#{current_user.id}/edit"
+    end
   end
 
 end

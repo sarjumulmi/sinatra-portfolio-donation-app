@@ -5,7 +5,7 @@
 <form action="/donors/<%= @donor.id%>/edit" method="get">
   <input type="submit" value="Edit Profile">
 </form>
-<h3><%= @donor.name.capitalize %>'s Charitable Contribution:'</h3>
+<h3><%= @donor.name %>'s Charitable Contribution:'</h3>
 <% @donor.donations.each do |donation| %>
   <ul>
     <li class="border">
