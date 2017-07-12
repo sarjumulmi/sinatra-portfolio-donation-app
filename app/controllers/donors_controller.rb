@@ -30,7 +30,12 @@ class DonorsController < ApplicationController
   end
 
   get '/donors/:id' do
-    
+    @donor = Donor.find(params[:id])
+    if logged_in?
+      erb :'/donors/show'
+    else
+      redirect '/login'
+    end
   end
 
 end
