@@ -3,6 +3,7 @@ body {
   margin: 10px;
   padding : 10px;
   background-color: white;
+  line-height: 1.8em;
 }
 
 h1 {
@@ -16,26 +17,26 @@ a {
   padding-top: 15px;
 }
 
-input[type=password] {
+input[type =text] {
+    width: 30%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type =password] {
     width: 30%;
     padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
-input[type=email] {
+input[type = email] {
     width: 30%;
     padding: 10px 10px;
     margin: 8px 0;
     box-sizing: border-box;
 }
 
-input[type=text] {
-    width: 30%;
-    padding: 10px 10px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
 
 p.warning {
   color: red;

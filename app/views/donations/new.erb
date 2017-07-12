@@ -1,0 +1,19 @@
+<h1>Thank you for making a charitable donation, <%= current_user.name.capitalize %></h1>
+<form action="/donations" method="post">
+  <label for="">Choose Charity:</label>
+  <select name="charity_id">
+    <% Charity.all.each do |charity| %>
+      <option value="charity.id"><%= charity.name.upcase %></option>
+    <% end %>
+  </select><br>
+  <label for="item">Item to Donate: </label><br>
+  <input type="text" name="item" id="item"><br>
+  <label for="item_price">Item Price: </label><br>
+  <input type="text" name="item_price" id="item_price"><br>
+  <input type="submit" name="" value="Donate"><br>
+  <p class="border-bottom"></p>
+</form>
+
+<form action="/logout" method="get">
+  <input type="submit" value="Logout">
+</form>
