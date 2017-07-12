@@ -1,0 +1,13 @@
+<ul>
+  <% @donors.each do |donor| %>
+
+    <li class="border-bottom">Donor Name:
+      <%= donor.name %><br>
+      <% donor.donations.each do |donation| %>
+        <ul>
+          <li>Item: <%= donation.item %> Charity: <%= donation.charity.name %></li>
+        </ul>
+      <% end %>
+    </li><br>
+  <% end %>
+</ul>

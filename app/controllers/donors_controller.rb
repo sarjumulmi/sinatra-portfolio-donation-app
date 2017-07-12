@@ -20,5 +20,14 @@ class DonorsController < ApplicationController
     end
   end
 
+  get '/donors' do
+    if logged_in?
+      @donors = Donor.all
+      erb :'/donors/index'
+    else
+      redirect '/login'
+    end
+  end
+
 
 end

@@ -40,3 +40,11 @@ input[type=text] {
 p.warning {
   color: red;
 }
+
+li {
+  list-style: none;
+}
+
+li.border-bottom {
+  border-bottom: black solid 3px;
+}
