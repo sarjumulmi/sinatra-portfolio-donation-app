@@ -3,7 +3,7 @@
   <label for="">Choose Charity:</label>
   <select name="charity_id">
     <% Charity.all.each do |charity| %>
-      <option value="charity.id"><%= charity.name.upcase %></option>
+      <option value="<%= charity.id %>"><%= charity.name.upcase %></option>
     <% end %>
   </select><br>
   <label for="item">Item to Donate: </label><br>

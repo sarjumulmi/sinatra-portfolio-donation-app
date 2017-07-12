@@ -6,7 +6,16 @@ class DonationsController < ApplicationController
     else
       redirect '/login'
     end
+  end
 
+  post '/donations' do
+    # binding.pry
+    # params = {"charity_id"=>"1", "item"=>"somthing", "item_price"=>"4000"}
+    donation = Donation.create(:item=>params[:item], :item_price=>params[:item_price].to_i)
+    donation.donor = current_user
+    donation.charity = Charity.find(params[:charity_id])
+    donation.save
+    redirect "/donors/#{current_user.id}"
   end
 
 end
