@@ -1,0 +1,22 @@
+<h1>Charity Organization List</h1>
+<form action="/donations/new" method="get">
+  <input type="submit" value="Donate">
+</form>
+<ul>
+  <% @charities.each do |charity| %>
+
+    <li class="border">
+      <h3>Charity Name: <%= charity.name.upcase %></h3>
+      Our Esteemed Donors:<br>
+      <% charity.donors.each do |donor| %>
+
+        <ul>
+          <li><%= donor.name.capitalize %></li>
+        </ul>
+      <% end %>
+    </li><br>
+  <% end %>
+</ul>
+<form action="/logout" method="get">
+  <input type="submit" value="Logout">
+</form>

@@ -9,5 +9,6 @@ use Rack::MethodOverride
 use SessionsController
 use DonorsController
 use DonationsController
+use CharitiesController
 
 run ApplicationController
