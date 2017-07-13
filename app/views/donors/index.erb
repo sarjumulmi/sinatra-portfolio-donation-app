@@ -10,7 +10,7 @@
       <a href="/donors/<%= donor.id %>"><%= donor.name.capitalize %></a><br>
       <% donor.donations.each do |donation| %>
         <ul>Charity donated to:
-          <li><%= donation.charity.name.capitalize %></li>
+          <li><%= donation.charity.name %></li>
         </ul>
       <% end %>
     </li><br>
