@@ -1,4 +1,7 @@
 <h1>Thank you for making a charitable donation, <%= current_user.name.capitalize %></h1>
+<% if flash[:message] %>
+  <p class="warning"><%= flash[:message] %></p>
+<% end %>
 <form action="/donations" method="post">
   <label for="">Choose Charity:</label>
   <select name="charity_id">
