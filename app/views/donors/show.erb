@@ -2,9 +2,11 @@
 <form action="/donations/new" method="get">
   <input type="submit" value="Donate">
 </form>
-<form action="/donors/<%= @donor.id%>/edit" method="get">
+<% if current_user.id == @donor.id %>
+  <form action="/donors/<%= @donor.id%>/edit" method="get">
   <input type="submit" value="Edit Profile">
 </form>
+<% end %>
 <h3><%= @donor.name %>'s Charitable Contribution:'</h3>
 <% @donor.donations.each do |donation| %>
   <ul>
@@ -19,7 +21,9 @@
   <input type="submit" value="Logout">
 </form><br>
 <!-- Delete button -->
-<form action="/donors/<%= @donor.id %>/delete" method="post" onsubmit="return confirm('Are you sure you want to delete the donor?')">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Delete Donor">
-</form>
+<% if current_user.id == @donor.id %>
+  <form action="/donors/<%= @donor.id %>/delete" method="post" onsubmit="return confirm('Are you sure you want to delete the donor?')">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Donor">
+  </form>
+<% end %>
