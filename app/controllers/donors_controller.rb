@@ -61,7 +61,8 @@ class DonorsController < ApplicationController
   delete '/donors/:id/delete' do
     @donor = Donor.find(params[:id])
     @donor.delete
-    redirect to "/donors"
+    session.clear
+    redirect to "/"
   end
 
 end
