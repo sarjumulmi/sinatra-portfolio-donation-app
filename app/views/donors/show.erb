@@ -17,4 +17,9 @@
 <p class="border-bottom"><b>Total Donation: $<%= @donor.total_donation %></b></p>
 <form action="/logout" method="get">
   <input type="submit" value="Logout">
+</form><br>
+<!-- Delete button -->
+<form action="/donors/<%= @donor.id %>/delete" method="post" onsubmit="return confirm('Are you sure you want to delete the donor?')">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Donor">
 </form>

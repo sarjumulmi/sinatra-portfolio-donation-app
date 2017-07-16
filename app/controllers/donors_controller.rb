@@ -13,7 +13,7 @@ class DonorsController < ApplicationController
     donor = Donor.new(params)
     if donor.save
       session[:user_id] = donor.id
-      redirect '/donations'
+      redirect '/donors'
     else
       flash[:message] = 'Please fill all the required fields.'
       erb :'/donors/signup'
@@ -56,6 +56,12 @@ class DonorsController < ApplicationController
       flash[:message] = "Name cannot be blank."
       redirect "/donors/#{current_user.id}/edit"
     end
+  end
+
+  delete '/donors/:id/delete' do
+    @donor = Donor.find(params[:id])
+    @donor.delete
+    redirect to "/donors"
   end
 
 end
